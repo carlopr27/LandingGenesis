@@ -274,6 +274,12 @@
     .segle-zoho-form .formsubmit:disabled{opacity:.65;cursor:wait}
     .segle-zoho-form .zoho-reset{width:auto;background:transparent;color:var(--muted);border:0;padding:.9rem .25rem;cursor:pointer}
     .segle-zoho-note{font-size:.76rem;color:var(--muted);line-height:1.55;margin-top:.75rem;border-top:1px solid var(--line);padding-top:.75rem}
+    .zoho-inline-success{display:none;background:rgba(111,122,98,.10);border:1px solid rgba(111,122,98,.32);padding:1.25rem;color:var(--ink);outline:none}
+    .zoho-inline-success .success-kicker{font-size:.62rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--sage);margin-bottom:.55rem}
+    .zoho-inline-success h3{font-family:var(--display);font-size:1.85rem;font-weight:400;line-height:1.05;margin-bottom:.75rem;color:var(--ink)}
+    .zoho-inline-success p{font-size:.92rem;color:var(--muted);line-height:1.65;margin-bottom:.9rem}
+    .zoho-inline-success .success-meta{display:grid;gap:.35rem;margin-top:1rem;padding-top:.9rem;border-top:1px solid rgba(111,122,98,.22);font-size:.82rem;color:var(--muted)}
+    .zoho-inline-success .success-meta b{color:var(--ink)}
     @media(max-width:620px){.segle-zoho-form .zoho-grid{grid-template-columns:1fr}.segle-zoho-form .zoho-actions{flex-direction:column;align-items:stretch}.segle-zoho-form .zoho-reset{width:100%;border:1px solid var(--line)}}
     @media(max-width:850px){.contact-box{grid-template-columns:1fr}}
     .info-trigger{margin-top:1.1rem;width:100%;justify-content:center;background:rgba(255,249,242,.06);border-color:rgba(246,176,119,.45);color:var(--peach)}
@@ -598,7 +604,7 @@
           </div>
           <div>
             <div id="crmWebToEntityForm" class="crmWebToEntityForm segle-zoho-form">
-              <form id="webform4313719000096522003" action="https://crm.zoho.com/crm/WebToLeadForm" name="WebToLeads4313719000096522003" method="POST" onSubmit='javascript:document.charset="UTF-8"; return checkMandatory4313719000096522003()' accept-charset="UTF-8">
+              <form id="webform4313719000096522003" action="https://crm.zoho.com/crm/WebToLeadForm" name="WebToLeads4313719000096522003" method="POST" target="zoho_hidden_iframe" onSubmit='javascript:document.charset="UTF-8"; return checkMandatory4313719000096522003()' accept-charset="UTF-8">
                 <input type="text" style="display:none;" name="xnQsjsdp" value="f7dcbd8de15a23e3fabda542eb1f83a06095f57f0366b298905d04fc94d4335b">
                 <input type="hidden" name="zc_gad" id="zc_gad" value="">
                 <input type="text" style="display:none;" name="xmIwtLD" value="0a13fff69fbcad0539caa10efaaaeaa512663faab4dec4deb3cc6d698dd1f2c14534172c29d689baae2a6b97825763a7">
@@ -680,6 +686,17 @@
                 </div>
                 <p class="segle-zoho-note">Al enviar tus datos, SEGLE México podrá contactarte para confirmar disponibilidad, ciudad de interés y próximos pasos de la gira.</p>
               </form>
+              <iframe name="zoho_hidden_iframe" id="zoho_hidden_iframe" title="Envío seguro a Zoho CRM" style="display:none;width:0;height:0;border:0;"></iframe>
+              <div id="zohoInlineSuccess" class="zoho-inline-success" tabindex="-1" role="status" aria-live="polite">
+                <div class="success-kicker">Registro recibido</div>
+                <h3>Gracias por registrarte.</h3>
+                <p>Hemos recibido tu información para SEGLE Génesis 2026 México. El equipo de SEGLE México se pondrá en contacto contigo para compartir detalles de la gira, disponibilidad y próximos pasos.</p>
+                <div class="success-meta">
+                  <div><b>Gira:</b> CDMX · Monterrey · Guadalajara</div>
+                  <div><b>Lanzamiento:</b> nueva línea NAD+</div>
+                  <div><b>Seguimiento:</b> por correo electrónico o WhatsApp</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -797,7 +814,18 @@
       }
       var submitBtn = document.querySelector('.crmWebToEntityForm .formsubmit');
       if(submitBtn) submitBtn.setAttribute('disabled', true);
+      window.setTimeout(function(){ showZohoInlineSuccess4313719000096522003(); }, 900);
       return true;
+    }
+
+    function showZohoInlineSuccess4313719000096522003(){
+      var form = document.getElementById('webform4313719000096522003');
+      var success = document.getElementById('zohoInlineSuccess');
+      if(form && success){
+        form.style.display = 'none';
+        success.style.display = 'block';
+        success.focus();
+      }
     }
   </script>
 
