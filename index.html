@@ -100,7 +100,7 @@
       font-size:15vw;line-height:1;color:rgba(23,21,20,.035);letter-spacing:-.05em;pointer-events:none;
     }
     .hero-grid{
-      width:100%;display:grid;grid-template-columns:.86fr 1.14fr;align-items:center;gap:clamp(1.7rem,3.8vw,4rem);
+      width:100%;display:grid;grid-template-columns:.76fr 1.24fr;align-items:center;gap:clamp(1.7rem,3.8vw,4rem);
       min-height:calc(100vh - 68px);padding:4rem 0 3.4rem;position:relative;z-index:1;
     }
     .hero-kicker{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1.5rem}
@@ -113,22 +113,22 @@
     .micro{background:rgba(255,249,242,.72);padding:1rem}
     .micro strong{display:block;font-family:var(--display);font-size:1.52rem;font-weight:400;line-height:1;color:var(--ink);margin-bottom:.35rem}
     .micro span{display:block;font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);line-height:1.35}
-    .hero-visual{position:relative;min-height:780px;display:grid;grid-template-columns:minmax(455px,650px) minmax(150px,225px);gap:clamp(1.45rem,2.8vw,2.4rem);align-items:center;justify-content:center}
+    .hero-visual{position:relative;min-height:865px;display:grid;grid-template-columns:minmax(560px,780px) minmax(135px,205px);gap:clamp(2.1rem,3.6vw,3.4rem);align-items:center;justify-content:center}
     .monica-card{position:relative;width:100%;background:var(--white);border:1px solid rgba(23,21,20,.08);padding:1.15rem;box-shadow:0 36px 96px rgba(23,21,20,.18);z-index:2}
     .monica-card img{aspect-ratio:3/4;object-fit:cover;object-position:center top;width:100%}
     .monica-caption{display:flex;justify-content:space-between;gap:1rem;align-items:flex-end;padding-top:.9rem}
     .monica-caption strong{font-family:var(--display);font-size:1.62rem;font-weight:400;line-height:1}
     .monica-caption span{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--clay-dark);text-align:right}
-    .product-hero{position:relative;width:100%;z-index:3;background:transparent;border:0;box-shadow:none;padding:0;align-self:end;margin-bottom:3.1rem}
+    .product-hero{position:relative;width:100%;max-width:205px;z-index:3;background:transparent;border:0;box-shadow:none;padding:0;align-self:end;margin-bottom:3.1rem}
     .product-hero-label{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--clay-dark);margin-bottom:.65rem;text-align:center}
-    .product-stack{position:relative;height:368px;background:transparent;overflow:visible;display:grid;grid-template-columns:1fr 1fr;gap:1.05rem .85rem;align-items:end}
+    .product-stack{position:relative;height:382px;background:transparent;overflow:visible;display:grid;grid-template-columns:1fr 1fr;gap:1.65rem 1.25rem;align-items:end}
     .product-stack:before{content:"";position:absolute;inset:auto -20% -10% auto;width:86%;height:70%;border-radius:50%;background:rgba(233,96,148,.13);filter:blur(2px)}
     .product-stack:after{content:"NAD+";position:absolute;right:-.4rem;bottom:.25rem;font-family:var(--display);font-size:4.2rem;color:rgba(23,21,20,.055);z-index:0}
     .product-stack img{position:static;object-fit:contain;mix-blend-mode:multiply;filter:drop-shadow(0 15px 18px rgba(23,21,20,.13));z-index:1;max-width:100%;justify-self:center}
-    .hero-antiox{grid-column:1;max-height:228px;align-self:end}
-    .hero-serum{grid-column:2;max-height:218px;align-self:end}
-    .hero-cream{grid-column:1 / -1;max-height:118px;width:68%;align-self:start;margin-top:.15rem}
-    @media(max-width:980px){.hero-grid{grid-template-columns:1fr;min-height:auto;padding-top:3rem}.hero-visual{min-height:660px;max-width:840px;grid-template-columns:minmax(360px,590px) minmax(130px,205px);justify-content:start}.hero-card{max-width:440px}}
+    .hero-antiox{grid-column:1;max-height:210px;align-self:end}
+    .hero-serum{grid-column:2;max-height:202px;align-self:end}
+    .hero-cream{grid-column:1 / -1;max-height:104px;width:64%;align-self:start;margin-top:.45rem}
+    @media(max-width:980px){.hero-grid{grid-template-columns:1fr;min-height:auto;padding-top:3rem}.hero-visual{min-height:720px;max-width:920px;grid-template-columns:minmax(420px,650px) minmax(120px,190px);justify-content:start}.hero-card{max-width:440px}}
     @media(max-width:620px){.hero-micro{grid-template-columns:1fr}.btn{width:100%}.hero-visual{min-height:auto;grid-template-columns:1fr;max-width:460px}.monica-card{width:100%;padding:.75rem}.product-hero{width:82%;justify-self:end;margin:1.2rem 0 0}.product-stack{height:275px;gap:.85rem .7rem}.hero-antiox{max-height:162px}.hero-serum{max-height:154px}.hero-cream{max-height:88px}.monica-caption{display:block}.monica-caption span{text-align:left;display:block;margin-top:.3rem}}
 
     /* STRIP */
@@ -268,6 +268,22 @@
     .modal-caption{padding:.8rem 1rem;color:rgba(255,249,242,.66);font-size:.78rem;border-top:1px solid rgba(255,249,242,.1);background:#111}
     body.modal-open{overflow:hidden}
 
+
+    [id]{scroll-margin-top:82px}
+    .manifesto-anchor{height:1px;background:var(--charcoal)}
+    .monica{padding-bottom:0}
+    .monica .product-ribbon{margin-top:clamp(3rem,5vw,5rem)}
+    .wa-float{
+      position:fixed;right:clamp(1rem,2.2vw,1.4rem);bottom:clamp(1rem,2.2vw,1.4rem);z-index:160;
+      display:inline-flex;align-items:center;gap:.55rem;background:#25D366;color:#062b13;
+      min-height:48px;padding:0 1rem;border-radius:999px;font-size:.72rem;font-weight:800;
+      letter-spacing:.08em;text-transform:uppercase;box-shadow:0 16px 42px rgba(0,0,0,.22);
+      border:1px solid rgba(255,255,255,.5)
+    }
+    .wa-float svg{width:19px;height:19px;fill:currentColor;flex:0 0 auto}
+    .wa-float:hover{transform:translateY(-1px);box-shadow:0 20px 48px rgba(0,0,0,.26)}
+    @media(max-width:620px){.wa-float{width:52px;height:52px;min-height:52px;padding:0;justify-content:center}.wa-float span{display:none}}
+
     footer{background:var(--charcoal);color:rgba(255,249,242,.48);padding:2rem 0;font-size:.78rem}
     .footer-inner{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
   </style>
@@ -280,10 +296,10 @@
         <span class="logo-sub">Biotech Skincare · México</span>
       </a>
       <ul class="nav-links">
-        <li><a href="#genesis">Génesis</a></li>
         <li><a href="#manifiesto">Manifiesto</a></li>
+        <li><a href="#genesis">Génesis</a></li>
         <li><a href="#monica">Mónica</a></li>
-        <li><a href="#teaser-nad">Teaser</a></li>
+        <li><a href="#teaser-nad">Teaser NAD+</a></li>
         <li><a href="#nad">NAD+</a></li>
         <li><a href="#tour">Gira</a></li>
       </ul>
@@ -333,13 +349,15 @@
       </div>
     </section>
 
+    <div id="manifiesto" class="manifesto-anchor" aria-hidden="true"></div>
+
     <div class="pillars-strip" aria-label="Pilares Génesis 2026">
       <div class="container strip-inner">
         <span>Naturaleza</span><span>·</span><span>Biotecnología</span><span>·</span><span>El poder del sérum</span><span>·</span><span>Eficacia</span><span>·</span><span>La piel</span>
       </div>
     </div>
 
-    <section class="video-band" id="manifiesto" aria-label="Video Génesis 2026">
+    <section class="video-band" id="video-manifiesto" aria-label="Video Génesis 2026">
       <div class="container">
         <div class="video-panel reveal">
           <div class="video-copy">
@@ -380,16 +398,6 @@
       </div>
     </section>
 
-    <div class="product-ribbon" aria-label="Línea NAD+ y gira México">
-      <div class="container strip-inner">
-        <span class="pink">Energía y longevidad celular</span><span class="dot">·</span>
-        <span class="peach">Antiox NAD+</span><span class="dot">·</span>
-        <span class="blue">Collagen NAD+ Serum</span><span class="dot">·</span>
-        <span class="blue">Collagen NAD+ Crema</span><span class="dot">·</span>
-        <span class="gold">Génesis 2026</span><span class="dot">·</span>
-        <span class="blue">CDMX · MTY · GDL</span>
-      </div>
-    </div>
 
     <section class="section monica" id="monica">
       <div class="container monica-grid">
@@ -411,6 +419,16 @@
           </div>
         </div>
       </div>
+    <div class="product-ribbon" aria-label="Línea NAD+ y gira México">
+      <div class="container strip-inner">
+        <span class="pink">Energía y longevidad celular</span><span class="dot">·</span>
+        <span class="peach">Antiox NAD+</span><span class="dot">·</span>
+        <span class="blue">Collagen NAD+ Serum</span><span class="dot">·</span>
+        <span class="blue">Collagen NAD+ Crema</span><span class="dot">·</span>
+        <span class="gold">Génesis 2026</span><span class="dot">·</span>
+        <span class="blue">CDMX · MTY · GDL</span>
+      </div>
+    </div>
     </section>
 
 
@@ -419,14 +437,14 @@
       <div class="container teaser-grid">
         <div class="teaser-copy">
           <span class="eyebrow reveal">Teaser de producto</span>
-          <h2 class="section-title reveal">La nueva gama<br>también se tiene que sentir.</h2>
+          <h2 class="section-title reveal">La línea NAD+<br>en movimiento.</h2>
           <p class="section-lead reveal">
-            Un apoyo visual breve para introducir la energía de la línea NAD+: piel luminosa, textura ligera, sensorialidad premium y una narrativa más cercana para consumidor final y canal profesional.
+            Un teaser breve para presentar la nueva gama desde su dimensión más sensorial: textura ligera, piel luminosa y una rutina pro-longevidad fácil de entender para consumidor final y canal profesional.
           </p>
           <div class="teaser-bullets reveal">
-            <div class="teaser-bullet"><strong>Uso</strong>Ideal como transición entre la historia de Mónica y la presentación técnica de NAD+.</div>
-            <div class="teaser-bullet"><strong>Función</strong>Da contexto aspiracional sin competir con el manifiesto Génesis.</div>
-            <div class="teaser-bullet"><strong>Formato</strong>Video corto, vertical, silencioso y en loop para no cargar la página.</div>
+            <div class="teaser-bullet"><strong>Sensorialidad</strong>Texturas ligeras, absorción cómoda y una experiencia de uso premium.</div>
+            <div class="teaser-bullet"><strong>Luminosidad</strong>Una narrativa visual enfocada en piel revitalizada, firme y con mejor apariencia.</div>
+            <div class="teaser-bullet"><strong>Rutina NAD+</strong>Una gama pensada para integrarse con claridad en protocolos y recomendación diaria.</div>
           </div>
         </div>
         <div class="teaser-phone reveal">
@@ -590,6 +608,11 @@
       <div class="modal-caption">Información adicional para profesionales: mecanismo NAD+, activos destacados y contexto de uso de la nueva gama.</div>
     </div>
   </div>
+
+  <a class="wa-float" href="https://wa.me/5215574047784?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20la%20gira%20SEGLE%20G%C3%A9nesis%202026%20y%20la%20l%C3%ADnea%20NAD%2B." target="_blank" rel="noopener" aria-label="Solicitar más información por WhatsApp">
+    <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16.02 3.2A12.58 12.58 0 0 0 5.29 22.37L3.8 28.8l6.57-1.43A12.58 12.58 0 1 0 16.02 3.2Zm0 22.92c-1.98 0-3.86-.56-5.48-1.63l-.39-.25-3.9.85.88-3.79-.26-.4a10.32 10.32 0 1 1 9.15 5.22Zm5.78-7.72c-.32-.16-1.86-.92-2.15-1.03-.29-.1-.5-.16-.71.16-.21.32-.82 1.03-1 1.24-.18.21-.37.24-.68.08-.32-.16-1.34-.49-2.55-1.57-.94-.84-1.58-1.88-1.77-2.2-.18-.32-.02-.49.14-.65.14-.14.32-.37.47-.55.16-.18.21-.32.32-.53.11-.21.05-.39-.03-.55-.08-.16-.71-1.72-.97-2.36-.26-.62-.52-.54-.71-.55h-.61c-.21 0-.55.08-.84.39-.29.32-1.1 1.08-1.1 2.62s1.13 3.04 1.29 3.25c.16.21 2.23 3.4 5.4 4.77.75.32 1.34.52 1.8.66.76.24 1.45.21 1.99.13.61-.09 1.86-.76 2.12-1.5.26-.74.26-1.37.18-1.5-.08-.13-.29-.21-.6-.37Z"/></svg>
+    <span>Más información</span>
+  </a>
 
   <footer>
     <div class="container footer-inner">
