@@ -5,7 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <title>SEGLE Génesis 2026 · Gira México · Línea NAD+</title>
-  <meta name="description" content="Gira México 2026 de Mónica Lizondo, cofundadora y CEO de SEGLE Biotech Skincare, para presentar Génesis 2026 y la nueva línea NAD+." />
+  <meta name="description" content="Mónica Lizondo presenta en México la nueva línea NAD+ y la visión Génesis 2026 de SEGLE Biotech Skincare." />
+
+  <!-- Vista previa para WhatsApp, Facebook, LinkedIn y otros enlaces compartidos -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SEGLE Clinical MX" />
+  <meta property="og:url" content="https://genesis.omniaex.com/" />
+  <meta property="og:title" content="SEGLE Génesis 2026 · Gira México" />
+  <meta property="og:description" content="Mónica Lizondo presenta la nueva línea NAD+ y la visión Génesis 2026 de SEGLE Biotech Skincare en México." />
+  <meta property="og:image" content="https://genesis.omniaex.com/segle-genesis-og.jpg?v=1" />
+  <meta property="og:image:secure_url" content="https://genesis.omniaex.com/segle-genesis-og.jpg?v=1" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="es_MX" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SEGLE Génesis 2026 · Gira México" />
+  <meta name="twitter:description" content="Mónica Lizondo presenta la nueva línea NAD+ y la visión Génesis 2026 de SEGLE Biotech Skincare en México." />
+  <meta name="twitter:image" content="https://genesis.omniaex.com/segle-genesis-og.jpg?v=1" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -307,6 +325,89 @@
     .wa-float svg{width:19px;height:19px;fill:currentColor;flex:0 0 auto}
     .wa-float:hover{transform:translateY(-1px);box-shadow:0 20px 48px rgba(0,0,0,.26)}
     @media(max-width:620px){.wa-float{width:52px;height:52px;min-height:52px;padding:0;justify-content:center}.wa-float span{display:none}}
+
+
+
+    /* V9 RESPONSIVE REFINEMENTS */
+    @media(min-width:901px) and (max-width:1500px){
+      :root{--max:1180px;--pad:clamp(2.4rem,4.4vw,4rem)}
+      .hero-grid{grid-template-columns:.88fr 1.12fr;gap:clamp(1.15rem,2.6vw,2.4rem);padding-top:3.35rem;padding-bottom:3rem}
+      h1{font-size:clamp(3.2rem,6.05vw,6.25rem);line-height:.9}
+      .hero-copy{font-size:.98rem;max-width:540px}
+      .hero-actions{margin-bottom:1.5rem}
+      .hero-visual{min-height:760px;grid-template-columns:minmax(430px,620px) minmax(110px,165px);gap:clamp(1.1rem,2.2vw,2rem);justify-content:center}
+      .monica-card{padding:1rem}
+      .product-hero{max-width:160px;margin-bottom:2.55rem}
+      .product-stack{height:318px;gap:1.15rem .95rem}
+      .hero-antiox{max-height:176px}
+      .hero-serum{max-height:168px}
+      .hero-cream{max-height:88px;width:66%}
+      .micro{padding:.82rem}.micro strong{font-size:1.28rem}.micro span{font-size:.6rem}
+    }
+
+    @media(max-width:900px){
+      :root{--pad:1.55rem}
+      .container{padding-left:var(--pad);padding-right:var(--pad)}
+      .nav{background:rgba(255,249,242,.95)}
+      .nav-inner{height:auto;min-height:90px;flex-wrap:wrap;align-content:center;padding-top:.72rem;padding-bottom:.55rem;row-gap:.55rem}
+      .logo{flex:0 0 auto}
+      .nav-register{display:inline-flex;margin-left:auto;font-size:.58rem;letter-spacing:.1em;white-space:nowrap}
+      .nav-links{display:flex;order:3;flex:0 0 100%;gap:1rem;overflow-x:auto;white-space:nowrap;padding:.16rem 0 .1rem;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+      .nav-links::-webkit-scrollbar{display:none}
+      .nav-links a{font-size:.6rem;color:var(--muted)}
+      [id]{scroll-margin-top:118px}
+      .hero{padding-top:108px;min-height:auto}
+      .hero-grid{min-height:auto;padding:2.2rem 0 2.5rem;gap:1.45rem}
+      h1{font-size:clamp(3rem,14vw,4.95rem);line-height:.9;margin-bottom:1rem}
+      .hero-copy{font-size:.95rem;max-width:100%;margin-bottom:1.25rem}
+      .hero-actions{margin-bottom:1rem}
+      .btn{min-height:42px;font-size:.64rem;padding:0 .95rem}
+    }
+
+    @media(max-width:620px){
+      :root{--pad:1.5rem}
+      .section{padding:3.65rem 0}
+      .section-title{font-size:clamp(2.35rem,11.5vw,3.75rem)}
+      .section-lead{font-size:.94rem}
+      .logo-main{font-size:.78rem}.logo-sub{font-size:.5rem}
+      .nav-register{font-size:.52rem;max-width:43%;text-align:right;line-height:1.2}
+      .nav-links{gap:.9rem}
+      .nav-links a{font-size:.56rem}
+      .hero-kicker{gap:.45rem;margin-bottom:1rem}
+      .tag{font-size:.54rem;padding:.34rem .52rem}
+      .hero-actions .btn{width:100%}
+      .hero-micro{grid-template-columns:repeat(3,minmax(0,1fr));max-width:100%;margin-top:.65rem}
+      .micro{padding:.55rem .38rem;text-align:center}
+      .micro strong{font-size:1.05rem;margin-bottom:.22rem}
+      .micro span{font-size:.52rem;letter-spacing:.07em;line-height:1.18}
+      .hero-visual{display:grid;grid-template-columns:minmax(0,3fr) minmax(70px,1fr);gap:.75rem;align-items:end;max-width:100%;margin-top:.65rem;min-height:auto}
+      .monica-card{grid-column:1;width:100%;padding:.52rem}
+      .monica-card img{aspect-ratio:3/4;object-position:center top}
+      .monica-caption{padding-top:.5rem}
+      .monica-caption strong{font-size:1.1rem}
+      .monica-caption span{font-size:.48rem;line-height:1.25}
+      .product-hero{grid-column:2;width:100%;max-width:none;justify-self:stretch;align-self:end;margin:0 0 .4rem}
+      .product-hero-label{font-size:.47rem;line-height:1.2;margin-bottom:.35rem;text-align:center}
+      .product-stack{height:auto;display:flex;flex-direction:column;gap:.5rem;align-items:center;justify-content:flex-end}
+      .product-stack:before{width:112%;height:70%;right:-25%;bottom:-8%}
+      .product-stack:after{font-size:2.25rem;right:-.15rem;bottom:-.1rem}
+      .product-stack img{width:100%;height:auto;max-width:58px;filter:drop-shadow(0 10px 12px rgba(23,21,20,.12))}
+      .hero-antiox,.hero-serum{max-height:88px}
+      .hero-cream{max-height:54px;width:80%;margin-top:0}
+      .pillars-strip .strip-inner{white-space:normal;flex-wrap:wrap;justify-content:center;gap:.45rem .72rem;line-height:1.5;font-size:.56rem;text-align:center;padding:.85rem 0}
+      .pillars-strip .strip-inner span{display:inline-flex}
+      .product-ribbon .strip-inner{white-space:normal;flex-wrap:wrap;justify-content:center;overflow:visible;gap:.42rem .68rem;font-size:.52rem;text-align:center;line-height:1.45;padding:.82rem 0}
+      .product-ribbon .dot{display:none}
+      .video-band{padding-top:2rem}
+      .genesis-grid{margin-top:1.6rem}
+      .pillars{grid-template-columns:1fr}
+      .pillar{padding:.85rem}
+      .pillar b{font-size:1.2rem}.pillar span{font-size:.86rem}
+      .monica .product-ribbon{margin-top:2.6rem}
+      .teaser-grid{text-align:left;gap:1.7rem}
+      .teaser-phone{justify-self:center;width:min(92%,300px)}
+      .teaser-bullets{grid-template-columns:1fr}
+    }
 
     footer{background:var(--charcoal);color:rgba(255,249,242,.48);padding:2rem 0;font-size:.78rem}
     .footer-inner{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
