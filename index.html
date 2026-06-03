@@ -257,6 +257,24 @@
     textarea{min-height:112px;resize:vertical}
     input:focus,select:focus,textarea:focus{border-color:var(--clay)}
     .success{display:none;margin-top:1rem;padding:1rem;background:rgba(111,122,98,.12);border:1px solid rgba(111,122,98,.28);color:var(--sage)}
+
+    /* ZOHO CRM WEBFORM */
+    .segle-zoho-form{width:100%;max-width:100%;background:transparent;color:var(--ink)}
+    .segle-zoho-form .zoho-grid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem}
+    .segle-zoho-form .zoho-field{display:flex;flex-direction:column;gap:.42rem}
+    .segle-zoho-form label{font-size:.62rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--clay-dark)}
+    .segle-zoho-form input,.segle-zoho-form select,.segle-zoho-form textarea{width:100%;font-family:var(--brand);font-size:.92rem;border:1px solid var(--line);background:var(--paper);padding:.9rem 1rem;border-radius:0;color:var(--ink);outline:none}
+    .segle-zoho-form textarea{min-height:108px;resize:vertical}
+    .segle-zoho-form input:focus,.segle-zoho-form select:focus,.segle-zoho-form textarea:focus{border-color:var(--clay)}
+    .segle-zoho-form .zoho-check{display:flex;align-items:flex-start;gap:.65rem;background:rgba(189,104,78,.07);border:1px solid rgba(189,104,78,.18);padding:.8rem .9rem;color:var(--muted);font-size:.86rem;line-height:1.45}
+    .segle-zoho-form .zoho-check input{width:18px;height:18px;flex:0 0 auto;margin-top:.05rem;accent-color:var(--clay);padding:0}
+    .segle-zoho-form .zoho-check span{display:block}
+    .segle-zoho-form .zoho-actions{display:flex;gap:.75rem;align-items:center;margin-top:.15rem}
+    .segle-zoho-form .formsubmit{max-width:none;border:1px solid var(--clay-dark);background:var(--clay-dark);color:var(--white);cursor:pointer}
+    .segle-zoho-form .formsubmit:disabled{opacity:.65;cursor:wait}
+    .segle-zoho-form .zoho-reset{width:auto;background:transparent;color:var(--muted);border:0;padding:.9rem .25rem;cursor:pointer}
+    .segle-zoho-note{font-size:.76rem;color:var(--muted);line-height:1.55;margin-top:.75rem;border-top:1px solid var(--line);padding-top:.75rem}
+    @media(max-width:620px){.segle-zoho-form .zoho-grid{grid-template-columns:1fr}.segle-zoho-form .zoho-actions{flex-direction:column;align-items:stretch}.segle-zoho-form .zoho-reset{width:100%;border:1px solid var(--line)}}
     @media(max-width:850px){.contact-box{grid-template-columns:1fr}}
     .info-trigger{margin-top:1.1rem;width:100%;justify-content:center;background:rgba(255,249,242,.06);border-color:rgba(246,176,119,.45);color:var(--peach)}
     .info-trigger:hover{background:rgba(246,176,119,.12);border-color:var(--peach)}
@@ -579,22 +597,90 @@
             </div>
           </div>
           <div>
-            <form id="leadForm">
-              <input id="name" type="text" placeholder="Nombre completo*" required>
-              <input id="email" type="email" placeholder="Correo electrónico*" required>
-              <input id="phone" type="tel" placeholder="Teléfono / WhatsApp*" required>
-              <input id="company" type="text" placeholder="Clínica / farmacia / empresa*" required>
-              <select id="city" required>
-                <option value="">Ciudad de interés*</option>
-                <option>Ciudad de México · 7 julio 2026</option>
-                <option>Monterrey · 10 julio 2026</option>
-                <option>Guadalajara · 14 julio 2026</option>
-                <option>Más de una ciudad</option>
-              </select>
-              <textarea placeholder="Mensaje opcional"></textarea>
-              <button class="btn btn-primary" type="submit">Enviar solicitud</button>
-            </form>
-            <div class="success" id="successMsg">Solicitud recibida. El equipo SEGLE México dará seguimiento con la información de la gira.</div>
+            <div id="crmWebToEntityForm" class="crmWebToEntityForm segle-zoho-form">
+              <form id="webform4313719000096522003" action="https://crm.zoho.com/crm/WebToLeadForm" name="WebToLeads4313719000096522003" method="POST" onSubmit='javascript:document.charset="UTF-8"; return checkMandatory4313719000096522003()' accept-charset="UTF-8">
+                <input type="text" style="display:none;" name="xnQsjsdp" value="f7dcbd8de15a23e3fabda542eb1f83a06095f57f0366b298905d04fc94d4335b">
+                <input type="hidden" name="zc_gad" id="zc_gad" value="">
+                <input type="text" style="display:none;" name="xmIwtLD" value="0a13fff69fbcad0539caa10efaaaeaa512663faab4dec4deb3cc6d698dd1f2c14534172c29d689baae2a6b97825763a7">
+                <input type="text" style="display:none;" name="actionType" value="TGVhZHM=">
+                <input type="text" style="display:none;" name="returnURL" value="null">
+                <select name="Lead Source" aria-label="Fuente de Posible cliente" style="display:none;">
+                  <option selected value="Landing Page(s)">Landing Page(s)</option>
+                </select>
+                <input type="text" type="hidden" style="display:none;" name="aG9uZXlwb3Q" value="">
+
+                <div class="zoho-grid">
+                  <div class="zoho-field">
+                    <label for="First_Name">Nombre*</label>
+                    <input type="text" id="First_Name" aria-required="true" aria-label="First Name" name="First Name" maxlength="40" required>
+                  </div>
+                  <div class="zoho-field">
+                    <label for="Last_Name">Apellidos*</label>
+                    <input type="text" id="Last_Name" aria-required="true" aria-label="Last Name" name="Last Name" maxlength="80" required>
+                  </div>
+                </div>
+
+                <div class="zoho-field">
+                  <label for="LEADCF9">Puesto*</label>
+                  <select id="LEADCF9" onChange="addAriaSelected4313719000096522003(event)" aria-required="true" aria-label="LEADCF9" name="LEADCF9" required>
+                    <option value="-None-">Selecciona una opción</option>
+                    <option value="Médico">Médico</option>
+                    <option value="Dermo consultora">Dermo consultora</option>
+                    <option value="Cosmeatra">Cosmeatra</option>
+                    <option value="Directivo">Directivo</option>
+                    <option value="Administrativo">Administrativo</option>
+                    <option value="Asistente">Asistente</option>
+                    <option value="Compras">Compras</option>
+                    <option value="Almacén">Almacén</option>
+                    <option value="Cliente Final">Cliente final</option>
+                    <option value="Otro">Otro</option>
+                  </select>
+                </div>
+
+                <div class="zoho-grid">
+                  <div class="zoho-field">
+                    <label for="Mobile">WhatsApp*</label>
+                    <input type="tel" id="Mobile" aria-required="true" aria-label="Mobile" name="Mobile" maxlength="30" required>
+                  </div>
+                  <div class="zoho-field">
+                    <label for="Email">Correo electrónico*</label>
+                    <input type="email" ftype="email" autocomplete="email" id="Email" aria-required="true" aria-label="Email" name="Email" maxlength="100" required>
+                  </div>
+                </div>
+
+                <div class="zoho-field">
+                  <label for="Company">Empresa / clínica / farmacia*</label>
+                  <input type="text" id="Company" aria-required="true" aria-label="Company" name="Company" maxlength="200" required>
+                </div>
+
+                <div class="zoho-field">
+                  <label for="City">Ciudad de interés*</label>
+                  <select id="City" name="City" aria-label="City" required>
+                    <option value="">Selecciona una ciudad</option>
+                    <option value="Ciudad de México · 7 julio 2026">Ciudad de México · 7 julio 2026</option>
+                    <option value="Monterrey · 10 julio 2026">Monterrey · 10 julio 2026</option>
+                    <option value="Guadalajara · 14 julio 2026">Guadalajara · 14 julio 2026</option>
+                    <option value="Más de una ciudad">Más de una ciudad</option>
+                  </select>
+                </div>
+
+                <div class="zoho-field">
+                  <label for="Description">Mensaje opcional</label>
+                  <textarea id="Description" name="Description" aria-label="Description" placeholder="Cuéntanos si buscas asistir, recibir información comercial o conocer disponibilidad por ciudad."></textarea>
+                </div>
+
+                <label class="zoho-check" for="LEADCF106">
+                  <input type="checkbox" aria-checked="false" id="LEADCF106" aria-required="true" aria-label="LEADCF106" name="LEADCF106" maxlength="3" onclick="addAriaChecked4313719000096522003(event)" required>
+                  <span>Acepto recibir seguimiento por WhatsApp sobre la gira SEGLE Génesis 2026 y la línea NAD+.</span>
+                </label>
+
+                <div class="zoho-actions">
+                  <input type="submit" id="formsubmit" role="button" class="formsubmit btn btn-primary" value="Enviar solicitud" aria-label="Enviar solicitud" title="Enviar solicitud">
+                  <input type="reset" class="zoho-reset" role="button" name="reset" value="Limpiar" aria-label="Limpiar" title="Limpiar">
+                </div>
+                <p class="segle-zoho-note">Al enviar tus datos, SEGLE México podrá contactarte para confirmar disponibilidad, ciudad de interés y próximos pasos de la gira.</p>
+              </form>
+            </div>
           </div>
         </div>
       </div>
@@ -646,11 +732,77 @@
     modal.addEventListener('click', (e)=>{ if(e.target === modal) closeModal(); });
     document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal.classList.contains('open')) closeModal(); });
 
-    document.getElementById('leadForm').addEventListener('submit', function(e){
-      e.preventDefault();
-      this.style.display='none';
-      document.getElementById('successMsg').style.display='block';
-    });
+    function addAriaChecked4313719000096522003(e){
+      var checkboxElem = e ? e.target : event.target;
+      if (checkboxElem && checkboxElem.checked) checkboxElem.ariaChecked = 'true';
+      else if (checkboxElem) checkboxElem.ariaChecked = 'false';
+    }
+    function addAriaSelected4313719000096522003(e){
+      var optionElem = e ? e.target : event.target;
+      var previousSelectedOption = optionElem.querySelector('[aria-selected=true]');
+      if (previousSelectedOption) previousSelectedOption.removeAttribute('aria-selected');
+      if(optionElem.querySelectorAll('option')[optionElem.selectedIndex]) optionElem.querySelectorAll('option')[optionElem.selectedIndex].ariaSelected = 'true';
+    }
+    function validateEmail4313719000096522003(){
+      var form = document.forms['WebToLeads4313719000096522003'];
+      var emailFld = form.querySelectorAll('[ftype=email]');
+      for(var i = 0; i < emailFld.length; i++){
+        var emailVal = emailFld[i].value;
+        if((emailVal.replace(/^\s+|\s+$/g,'')).length != 0){
+          var atpos = emailVal.indexOf('@');
+          var dotpos = emailVal.lastIndexOf('.');
+          if(atpos < 1 || dotpos < atpos + 2 || dotpos + 2 >= emailVal.length){
+            alert('Introduzca una dirección de correo electrónico válida.');
+            emailFld[i].focus();
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+    function checkMandatory4313719000096522003(){
+      var mndFileds = new Array('Company','First Name','Last Name','Email','Mobile','LEADCF106','LEADCF9');
+      var fldLangVal = new Array('Empresa','Nombre','Apellidos','Correo electrónico','WhatsApp','Autorización de WhatsApp','Puesto');
+      for(var i = 0; i < mndFileds.length; i++){
+        var fieldObj = document.forms['WebToLeads4313719000096522003'][mndFileds[i]];
+        if(fieldObj){
+          if(fieldObj.type == 'checkbox'){
+            if(fieldObj.checked == false){
+              alert('Por favor acepta: ' + fldLangVal[i] + '.');
+              fieldObj.focus();
+              return false;
+            }
+          } else if(fieldObj.nodeName == 'SELECT'){
+            if(fieldObj.options[fieldObj.selectedIndex].value == '-None-' || fieldObj.value === ''){
+              alert(fldLangVal[i] + ' no puede estar vacío.');
+              fieldObj.focus();
+              return false;
+            }
+          } else if(((fieldObj.value).replace(/^\s+|\s+$/g,'')) .length == 0){
+            alert(fldLangVal[i] + ' no puede estar vacío.');
+            fieldObj.focus();
+            return false;
+          }
+        }
+      }
+      if(!validateEmail4313719000096522003()) return false;
+      var urlparams = new URLSearchParams(window.location.search);
+      if(urlparams.has('service') && (urlparams.get('service') === 'smarturl')){
+        var webform = document.getElementById('webform4313719000096522003');
+        var smarturlfield = document.createElement('input');
+        smarturlfield.setAttribute('type','hidden');
+        smarturlfield.setAttribute('value',urlparams.get('service'));
+        smarturlfield.setAttribute('name','service');
+        webform.appendChild(smarturlfield);
+      }
+      var submitBtn = document.querySelector('.crmWebToEntityForm .formsubmit');
+      if(submitBtn) submitBtn.setAttribute('disabled', true);
+      return true;
+    }
   </script>
+
+  <!-- Zoho CRM Webform Analytics Tracking code starts -->
+  <script id="wf_anal" src="https://crm.zohopublic.com/crm/WebFormAnalyticsServeServlet?rid=a5cc733590af16678b60778c725d1ecd1363201342449f24f2c8c608f7e3686df9ebbae703987e4e4983c316235fdeefgid27241fcd392a78e6aa8641c1009cf6d9b7e294a4effb72396eedf01e71672e43gidb1691591c5f1e14d83306e2e93fac0245d4fd5a345da784efeb1b0329503f9e4gid30fcf3e6c22c1050e6a211fbf9b9e73072bb95ccaea7f04a87102bc0b2631a51&tw=bcb658ed7620a9a67a5122cc4198ca13db4c2731f874e66af9f4e3c11b8177b9"></script>
+  <!-- Zoho CRM Webform Analytics Tracking code ends -->
 </body>
 </html>
