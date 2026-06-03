@@ -411,9 +411,61 @@
 
     footer{background:var(--charcoal);color:rgba(255,249,242,.48);padding:2rem 0;font-size:.78rem}
     .footer-inner{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+  
+
+    /* INTRO TEASER OVERLAY */
+    body.intro-lock{overflow:hidden}
+    .intro-video-overlay{
+      position:fixed;inset:0;z-index:9999;display:none;align-items:center;justify-content:center;
+      padding:clamp(1rem,4vw,2.5rem);background:rgba(18,16,15,.78);backdrop-filter:blur(18px);
+      opacity:0;transition:opacity .35s ease;
+    }
+    .intro-video-overlay.is-visible{display:flex;opacity:1}
+    .intro-video-overlay.is-closing{opacity:0}
+    .intro-video-card{
+      position:relative;width:min(92vw,430px);max-height:88vh;display:flex;flex-direction:column;align-items:center;
+      background:linear-gradient(145deg,rgba(255,249,242,.16),rgba(255,249,242,.04));
+      border:1px solid rgba(255,249,242,.18);box-shadow:0 30px 110px rgba(0,0,0,.42);padding:.75rem;
+    }
+    .intro-video-card:before{
+      content:"";position:absolute;inset:-1px;z-index:-1;background:radial-gradient(circle at 20% 20%,rgba(233,96,148,.22),transparent 30%),radial-gradient(circle at 90% 90%,rgba(246,176,119,.25),transparent 32%);
+    }
+    .intro-video-top{width:100%;display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.15rem .15rem .65rem;color:rgba(255,249,242,.72);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .intro-video-close{appearance:none;border:1px solid rgba(255,249,242,.22);background:rgba(255,249,242,.08);color:var(--paper);font-family:var(--brand);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.55rem .75rem;cursor:pointer;border-radius:999px}
+    .intro-video-close:hover{background:rgba(255,249,242,.16)}
+    .intro-video-media{width:100%;max-height:72vh;aspect-ratio:464/688;background:#111;object-fit:cover;display:block}
+    .intro-video-actions{position:absolute;left:50%;bottom:1.4rem;transform:translateX(-50%);display:flex;gap:.55rem;align-items:center;justify-content:center;width:max-content;max-width:calc(100% - 2rem)}
+    .intro-sound-btn{appearance:none;border:1px solid rgba(255,249,242,.24);background:rgba(18,16,15,.58);color:var(--paper);font-family:var(--brand);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.62rem .8rem;cursor:pointer;border-radius:999px;backdrop-filter:blur(10px)}
+    .intro-enter-btn{appearance:none;border:0;background:var(--clay);color:#fff;font-family:var(--brand);font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.68rem .95rem;cursor:pointer;border-radius:999px;box-shadow:0 10px 30px rgba(0,0,0,.22)}
+    @media(max-width:700px){
+      .intro-video-overlay{padding:.9rem}
+      .intro-video-card{width:min(92vw,360px);padding:.55rem}
+      .intro-video-media{max-height:70vh}
+      .intro-video-top{font-size:.56rem;padding-bottom:.5rem}
+      .intro-video-close{font-size:.56rem;padding:.5rem .62rem}
+      .intro-video-actions{bottom:1rem;gap:.4rem}
+      .intro-sound-btn,.intro-enter-btn{font-size:.54rem;padding:.58rem .68rem}
+    }
+
   </style>
 </head>
 <body>
+
+  <!-- Intro teaser: se muestra sobre la página al cargar y se cierra al terminar -->
+  <div class="intro-video-overlay" id="introVideoOverlay" role="dialog" aria-modal="true" aria-label="Teaser de la nueva línea NAD+">
+    <div class="intro-video-card">
+      <div class="intro-video-top">
+        <span>Teaser NAD+ · Génesis 2026</span>
+        <button class="intro-video-close" type="button" id="introVideoSkip">Saltar</button>
+      </div>
+      <video class="intro-video-media" id="introTeaserVideo" muted playsinline autoplay preload="auto" aria-label="Teaser visual de la nueva línea NAD+"></video>
+      <div class="intro-video-actions">
+        <button class="intro-sound-btn" type="button" id="introSoundBtn">Activar sonido</button>
+        <button class="intro-enter-btn" type="button" id="introEnterBtn">Entrar al sitio</button>
+      </div>
+    </div>
+  </div>
+
   <nav class="nav">
     <div class="container nav-inner">
       <a href="#inicio" class="logo" aria-label="SEGLE Génesis 2026">
@@ -928,6 +980,58 @@
         success.focus();
       }
     }
+  </script>
+
+
+
+  <script>
+    (function(){
+      var overlay = document.getElementById('introVideoOverlay');
+      var video = document.getElementById('introTeaserVideo');
+      var skip = document.getElementById('introVideoSkip');
+      var enter = document.getElementById('introEnterBtn');
+      var sound = document.getElementById('introSoundBtn');
+      if(!overlay || !video) return;
+
+      function setIntroSource(){
+        var teaserSource = document.querySelector('.teaser-video source');
+        if(teaserSource && teaserSource.getAttribute('src')){
+          video.setAttribute('src', teaserSource.getAttribute('src'));
+          video.load();
+        }
+      }
+      function closeIntro(){
+        overlay.classList.add('is-closing');
+        document.body.classList.remove('intro-lock');
+        try{ video.pause(); }catch(e){}
+        window.setTimeout(function(){
+          overlay.classList.remove('is-visible','is-closing');
+          overlay.style.display = 'none';
+        }, 360);
+      }
+      function openIntro(){
+        setIntroSource();
+        document.body.classList.add('intro-lock');
+        overlay.style.display = 'flex';
+        window.requestAnimationFrame(function(){ overlay.classList.add('is-visible'); });
+        var playPromise = video.play();
+        if(playPromise && playPromise.catch){ playPromise.catch(function(){}); }
+        window.setTimeout(function(){
+          if(overlay.classList.contains('is-visible')) closeIntro();
+        }, 9000);
+      }
+      if(skip) skip.addEventListener('click', closeIntro);
+      if(enter) enter.addEventListener('click', closeIntro);
+      if(sound) sound.addEventListener('click', function(){
+        video.muted = false;
+        video.volume = 1;
+        var p = video.play();
+        if(p && p.catch){ p.catch(function(){}); }
+        sound.textContent = 'Sonido activo';
+      });
+      video.addEventListener('ended', closeIntro);
+      window.addEventListener('load', openIntro);
+    })();
   </script>
 
   <!-- Zoho CRM Webform Analytics Tracking code starts -->
