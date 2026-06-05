@@ -459,6 +459,31 @@
   }
 }
 
+
+
+/* ===== V25 palette and visual fixes ===== */
+:root{--terracotta:#EB5E8F;--cta:#F4AD7D;--peach:#F4AD7D;--rose:#EB5E8F;--orange:#F4AD7D;}
+.accent,.hero h1 .accent-line,.section-title .accent,.quote,.metric strong{color:#EB5E8F!important;}
+.eyebrow,.tag,.nav-cta,.monica-chip span,.teaser-bullet strong,.point strong{color:#EB5E8F!important;}
+.btn-primary{background:#F4AD7D!important;border-color:#F4AD7D!important;color:#231f20!important;}
+.btn-primary:hover{background:#EB5E8F!important;border-color:#EB5E8F!important;color:#fff!important;}
+.info-btn:hover{background:#EB5E8F!important;border-color:#EB5E8F!important;}
+.city{border-top-color:#F4AD7D!important;}
+.quote{border-left-color:#F4AD7D!important;}
+.hero-tagline-top{color:#EB5E8F!important;}
+.m-orange{color:#F4AD7D!important}.m-rose{color:#EB5E8F!important}.m-neutral{color:#d6d2cd!important}
+.antiox .product-badge{color:#F4AD7D!important}.collagen .product-badge{color:#EB5E8F!important;}
+.hero-products-grid img{object-fit:contain!important;background:#fff!important;padding:clamp(.25rem,1vw,.7rem);}
+.hero-products-grid img:first-child{padding:clamp(.2rem,.8vw,.45rem);}
+.hero-products-grid img:nth-child(2),.hero-products-grid img:nth-child(3){padding:clamp(.45rem,1.25vw,.9rem);}
+.product-stage:before{display:none!important;}
+.collagen-gallery{display:block!important;background:#F7C2D7!important;}
+.collagen-gallery .collagen-pair{width:100%!important;height:100%!important;object-fit:cover!important;object-position:center!important;background:#F7C2D7!important;}
+@media(max-width:820px){
+  .hero-products-grid img{padding:.25rem!important;}
+  .hero-products-grid img:nth-child(2),.hero-products-grid img:nth-child(3){padding:.35rem!important;}
+}
+
 </style>
 </head>
 <body>
@@ -482,7 +507,7 @@
 </div>
 <aside aria-label="Nueva línea NAD+" class="hero-visual reveal d2">
 <div class="product-stage">
-<div class="hero-products-grid"><img alt="Antiox NAD+" src="assets/antiox-ficha.jpg"/><img alt="Collagen NAD+ Serum" src="assets/collagen-serum-ficha.jpg"/><img alt="Collagen NAD+ Crema" src="assets/collagen-cream-hero.jpg"/></div>
+<div class="hero-products-grid"><img alt="Antiox NAD+" src="assets/antiox-white.jpg"/><img alt="Collagen NAD+ Serum" src="assets/collagen-serum-white.jpg"/><img alt="Collagen NAD+ Crema" src="assets/collagen-cream-white.jpg"/></div>
 </div>
 <div class="monica-chip"><img alt="Mónica Lizondo" src="https://segle.es/cdn/shop/files/Monica_Lizondo_rojo_e7656648-06cb-4252-9cfd-e2cc95b2c3bf.jpg?crop=center&amp;height=1600&amp;v=1741177818&amp;width=1260"/><b>Presentado por Mónica Lizondo</b><span>Cofundadora de SEGLE</span></div>
 </aside>
@@ -499,7 +524,7 @@
 <div class="linea-intro"><div><span class="eyebrow">Lanzamiento</span><h2 class="section-title">Línea <span class="accent">NAD+ Booster Complex.</span></h2></div><p class="section-lead"><strong>Una gama completa con activos eficaces</strong> que trabajan sobre energía celular, defensa antioxidante, firmeza, función barrera y longevidad cutánea.</p></div>
 <div class="product-grid">
 <article class="product-card antiox"><div class="product-img"><img alt="Sérum Antiox NAD+" src="assets/antiox-ficha.jpg"/></div><div class="product-info"><span class="product-badge">X9 poder antioxidante</span><h3>Sérum Antiox NAD+</h3><p>Sérum antioxidante para todo tipo de piel con Vitamina C y NAD+. La máxima defensa antioxidante de SEGLE: protege, repara y prolonga la longevidad de la piel.</p><div class="actives"><span>3 tipos de Vitamina C</span><span>Ácido ferúlico</span><span>Vitamina E</span><span>Niacinamida</span><span>Astaxantina</span><span>EUK-134</span><span>CoQ10</span><span>RejuveNAD™</span></div><div class="metrics"><div class="metric"><strong>+58%</strong><span>hidratación*</span></div><div class="metric"><strong>+45%</strong><span>protección de ADN*</span></div></div></div></article>
-<article class="product-card collagen"><div class="product-img collagen-gallery"><img alt="Collagen NAD+ Serum" src="assets/collagen-serum-ficha.jpg"/><img alt="Collagen NAD+ Cream" src="assets/collagen-cream-ficha.jpg"/></div><div class="product-info"><span class="product-badge">Firmeza pro-colágeno</span><h3>Collagen NAD+ Serum &amp; Crema</h3><p>Firmeza inteligente con NAD+ y colágeno. Reactiva el colágeno y la energía celular mientras refuerza la función barrera y aumenta la longevidad de la piel.</p><div class="actives"><span>Aminoácidos estructurales de alga</span><span>Péptidos biomiméticos</span><span>Niacinamida</span><span>Ceramidas</span><span>Rejuvecoll®</span></div><div class="metrics"><div class="metric"><strong>+68%</strong><span>elasticidad*</span></div><div class="metric"><strong>+50%</strong><span>estimulación de NAD+*</span></div></div><p class="microcopy">Rejuvecoll®: péptidos de membrana de huevo que ayudan a estimular colágeno, elastina y ácido hialurónico.</p></div></article>
+<article class="product-card collagen"><div class="product-img collagen-gallery"><img class="collagen-pair" alt="Collagen NAD+ Serum y Collagen NAD+ Crema" src="assets/collagen-pair-ficha.jpg"/></div><div class="product-info"><span class="product-badge">Firmeza pro-colágeno</span><h3>Collagen NAD+ Serum &amp; Crema</h3><p>Firmeza inteligente con NAD+ y colágeno. Reactiva el colágeno y la energía celular mientras refuerza la función barrera y aumenta la longevidad de la piel.</p><div class="actives"><span>Aminoácidos estructurales de alga</span><span>Péptidos biomiméticos</span><span>Niacinamida</span><span>Ceramidas</span><span>Rejuvecoll®</span></div><div class="metrics"><div class="metric"><strong>+68%</strong><span>elasticidad*</span></div><div class="metric"><strong>+50%</strong><span>estimulación de NAD+*</span></div></div><p class="microcopy">Rejuvecoll®: péptidos de membrana de huevo que ayudan a estimular colágeno, elastina y ácido hialurónico.</p></div></article>
 </div>
 <div class="product-actions"><button class="info-btn" data-modal-open="" type="button">Información adicional NAD+</button></div>
 </div>
