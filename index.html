@@ -484,6 +484,58 @@
   .hero-products-grid img:nth-child(2),.hero-products-grid img:nth-child(3){padding:.35rem!important;}
 }
 
+
+
+/* ===== V26: hero frame colors + collagen pair horizontal image ===== */
+.product-stage{
+  background:linear-gradient(90deg,#F4AD7D 0 50%,#EB5E8F 50% 100%)!important;
+  padding:clamp(8px,1.1vw,14px)!important;
+  border:14px solid #fff!important;
+}
+.product-stage:before{display:none!important;}
+.hero-products-grid{
+  background:transparent!important;
+  gap:clamp(7px,1vw,12px)!important;
+}
+.hero-products-grid img{
+  background:#fff!important;
+  padding:clamp(.35rem,1.05vw,.82rem)!important;
+  box-shadow:0 0 0 1px rgba(255,255,255,.72) inset;
+}
+.hero-products-grid img:nth-child(2),
+.hero-products-grid img:nth-child(3){
+  background:#fff!important;
+}
+.collagen.product-card{
+  display:flex!important;
+  flex-direction:column!important;
+}
+.collagen .product-img.collagen-gallery{
+  display:block!important;
+  height:300px!important;
+  min-height:300px!important;
+  background:#F7C2D7!important;
+  overflow:hidden!important;
+}
+.collagen-gallery .collagen-pair{
+  width:100%!important;
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  background:#F7C2D7!important;
+  padding:0!important;
+}
+.collagen .product-info{
+  min-height:0!important;
+  flex:1 1 auto!important;
+}
+@media(max-width:860px){
+  .product-stage{border-width:8px!important;padding:7px!important;}
+  .hero-products-grid{gap:7px!important;}
+  .hero-products-grid img{padding:.25rem!important;}
+  .collagen .product-img.collagen-gallery{height:225px!important;min-height:225px!important;}
+}
+
 </style>
 </head>
 <body>
