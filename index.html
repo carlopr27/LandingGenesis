@@ -9,7 +9,7 @@
 <meta content="SEGLE presenta en México su nueva línea NAD+ Booster Complex durante el Tour México 2026. Aparta tu lugar." name="description"/>
 <meta content="SEGLE · Nueva línea NAD+ en México" property="og:title"/>
 <meta content="Tour México 2026 + Lanzamiento Línea NAD+. Aparta tu lugar para CDMX, Monterrey o Guadalajara." property="og:description"/>
-<meta content="https://genesis.omniaex.com/assets/segle-nad-og.jpg?v=27" property="og:image"/>
+<meta content="https://genesis.omniaex.com/assets/segle-nad-og.jpg?v=30" property="og:image"/>
 <meta content="https://genesis.omniaex.com/" property="og:url"/>
 <meta content="website" property="og:type"/>
 <meta content="summary_large_image" name="twitter:card"/>
@@ -637,6 +637,51 @@
 @media(max-width:860px){
   .tour-cta-banner{border-bottom:1px solid rgba(35,31,32,.08);}
 }
+
+
+/* ===== V30: persistent CTA banner + intro banner overlay ===== */
+:root{--actual-header-height:var(--header);}
+.site-header{z-index:120!important;}
+.tour-cta-banner{
+  position:sticky!important;
+  top:var(--actual-header-height, var(--header))!important;
+  z-index:110!important;
+  box-shadow:0 12px 30px rgba(35,31,32,.12);
+}
+.tour-cta-link{position:relative;isolation:isolate;}
+.tour-cta-link:before{content:'';position:absolute;inset:.42rem;border:1px solid rgba(255,255,255,.36);border-radius:999px;pointer-events:none;opacity:.75;}
+@media(min-width:861px){
+  .tour-cta-banner + main .hero{height:calc(100svh - var(--actual-header-height, var(--header)) - 62px);}
+}
+@media(max-width:860px){
+  .tour-cta-banner{top:var(--actual-header-height, 118px)!important;}
+  .tour-cta-link{padding:.72rem 1.15rem!important;gap:.28rem!important;}
+  .tour-cta-link:before{inset:.28rem .7rem;border-radius:18px;}
+  .tour-cta-kicker{font-size:.52rem!important;line-height:1.25!important;}
+  .tour-cta-link strong{font-size:1.15rem!important;line-height:1.08!important;}
+  .tour-cta-action{font-size:.54rem!important;padding:.48rem .72rem!important;}
+}
+.intro-banner-cta{
+  position:absolute;left:1.05rem;right:1.05rem;bottom:8.95rem;z-index:8;
+  display:flex;align-items:center;justify-content:space-between;gap:.8rem;
+  padding:.68rem .82rem;border-radius:999px;
+  background:linear-gradient(90deg,#F4AD7D,#EB5E8F);
+  color:#111!important;text-decoration:none!important;
+  box-shadow:0 14px 36px rgba(0,0,0,.28);
+  border:1px solid rgba(255,255,255,.42);
+}
+.intro-banner-cta span{font-family:var(--sans)!important;font-size:.54rem!important;letter-spacing:.13em!important;text-transform:uppercase!important;font-weight:900!important;color:#111!important;line-height:1.25!important;}
+.intro-banner-cta strong{font-family:var(--sans)!important;font-size:.58rem!important;letter-spacing:.1em!important;text-transform:uppercase!important;font-weight:900!important;color:#fff!important;white-space:nowrap!important;}
+@media(max-width:760px){
+  .intro-banner-cta{left:.8rem;right:.8rem;bottom:8.15rem;gap:.45rem;padding:.55rem .62rem;border-radius:18px;}
+  .intro-banner-cta span{font-size:.43rem!important;letter-spacing:.1em!important;}
+  .intro-banner-cta strong{font-size:.46rem!important;}
+}
+@media(max-height:690px){
+  .intro-banner-cta{bottom:7.5rem;}
+  .intro-video-copy h3{font-size:2rem!important;}
+  .intro-video-copy p{font-size:.88rem!important;margin-bottom:.72rem!important;}
+}
 </style>
 </head>
 <body>
@@ -673,7 +718,6 @@
 </aside>
 </div>
 </section>
-
 <section class="section" id="energia">
 <div class="black-marquee"><div class="marquee-inner"><span class="m-neutral">Energía y longevidad celular</span><span class="dot">·</span><span class="m-orange">Antiox NAD+</span><span class="dot">·</span><span class="m-rose">Collagen NAD+ Serum</span><span class="dot">·</span><span class="m-rose">Collagen NAD+ Crema</span><span class="dot">·</span><span class="m-neutral">NAD+ Booster Complex</span></div></div>
 <div class="container energy-body">
@@ -705,9 +749,8 @@
 <source src="assets/nad-teaser.mp4" type="video/mp4"/>
 </video>
 <div class="intro-video-top intro-video-floating-top">
-
 <button class="intro-video-close intro-top-skip" id="introSkipTop" type="button">Saltar</button>
-</div>
+</div><a aria-label="Aparta tu lugar para Tour México 2026 y Lanzamiento Línea NAD+" class="intro-banner-cta" href="#registro" id="introBannerCta"><span>Tour México 2026 + Lanzamiento Línea NAD+</span><strong>Aparta tu lugar ya</strong></a>
 <div class="intro-video-copy">
 <span>Nueva línea NAD+</span>
 <h3>Energía y longevidad<br/>celular.</h3>
@@ -878,4 +921,28 @@ function checkMandatory4313719000096522003(){
   });
 })();
 </script>
-</body></html>
+<script>
+(function(){
+  function setHeaderHeight(){
+    var h=document.querySelector('.site-header');
+    if(!h) return;
+    document.documentElement.style.setProperty('--actual-header-height', h.offsetHeight + 'px');
+  }
+  setHeaderHeight();
+  window.addEventListener('resize', setHeaderHeight);
+  window.addEventListener('orientationchange', function(){ setTimeout(setHeaderHeight,250); });
+})();
+(function(){
+  var introBanner=document.getElementById('introBannerCta');
+  if(!introBanner) return;
+  introBanner.addEventListener('click', function(e){
+    e.preventDefault();
+    if(window.closeIntroOverlay) window.closeIntroOverlay();
+    setTimeout(function(){
+      var target=document.getElementById('registro');
+      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+      else location.hash='registro';
+    }, 80);
+  });
+})();
+</script></body></html>
