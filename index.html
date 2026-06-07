@@ -628,6 +628,15 @@
   .btn-primary,.formsubmit.btn-primary{width:100%;padding:.95rem 1.05rem!important;font-size:.72rem!important;}
   .nav-cta{font-size:.62rem!important;}
 }
+
+/* ===== V29: banner moved below header, before hero ===== */
+.tour-cta-banner{position:relative;z-index:60;}
+@media(min-width:861px){
+  .tour-cta-banner + main .hero{height:calc(100svh - var(--header) - 62px);min-height:560px;}
+}
+@media(max-width:860px){
+  .tour-cta-banner{border-bottom:1px solid rgba(35,31,32,.08);}
+}
 </style>
 </head>
 <body>
@@ -640,6 +649,13 @@
 <a class="nav-cta" href="#registro">Solicitar invitación</a>
 </div>
 </header>
+<section aria-label="Aparta tu lugar en el Tour México 2026" class="tour-cta-banner" id="tourCtaBanner">
+<a class="tour-cta-link" href="#registro">
+<span class="tour-cta-kicker">Tour México 2026 + Lanzamiento Línea NAD+</span>
+<strong>Aparta tu lugar ya</strong>
+<span class="tour-cta-action">Solicitar invitación</span>
+</a>
+</section>
 <main>
 <section class="hero" id="home">
 <div class="container hero-grid">
@@ -656,13 +672,6 @@
 <div class="monica-chip"><img alt="Mónica Lizondo" src="https://segle.es/cdn/shop/files/Monica_Lizondo_rojo_e7656648-06cb-4252-9cfd-e2cc95b2c3bf.jpg?crop=center&amp;height=1600&amp;v=1741177818&amp;width=1260"/><b>Presentado por Mónica Lizondo</b><span>Cofundadora de SEGLE</span></div>
 </aside>
 </div>
-</section>
-<section aria-label="Aparta tu lugar en el Tour México 2026" class="tour-cta-banner" id="tourCtaBanner">
-<a class="tour-cta-link" href="#registro">
-<span class="tour-cta-kicker">Tour México 2026 + Lanzamiento Línea NAD+</span>
-<strong>Aparta tu lugar ya</strong>
-<span class="tour-cta-action">Solicitar invitación</span>
-</a>
 </section>
 
 <section class="section" id="energia">
