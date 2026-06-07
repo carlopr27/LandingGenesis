@@ -729,6 +729,23 @@
   .footer-inner{gap:.8rem!important}.footer-socials{justify-content:flex-start;margin-left:0;gap:.7rem}.footer-socials a{font-size:.66rem}.footer-socials svg{width:17px;height:17px}
 }
 @media(max-width:380px){.nav-cta{font-size:.68rem!important;padding:.4rem .48rem!important}.brand img{width:122px!important}}
+
+/* ===== V39 footer centering + reliable mobile CTA + mobile intro fallback ===== */
+.intro-mobile-gif{display:none!important;}
+@media(min-width:861px){
+  footer .footer-inner{display:grid!important;grid-template-columns:1fr auto 1fr!important;grid-template-areas:"logo copy empty" "social social social"!important;row-gap:1rem!important;align-items:center!important;}
+  footer .footer-logo{grid-area:logo!important;justify-self:start!important;}
+  footer .footer-copy{grid-area:copy!important;text-align:center!important;justify-self:center!important;}
+  footer .footer-socials{grid-area:social!important;justify-content:center!important;justify-self:center!important;margin-left:0!important;padding-right:0!important;}
+}
+@media(max-width:860px){
+  body{padding-top:var(--mobile-cta-height,72px)!important;}
+  .site-header{position:relative!important;top:auto!important;z-index:120!important;}
+  .tour-cta-banner{position:fixed!important;top:0!important;left:0!important;right:0!important;width:100%!important;z-index:240!important;transform:translateZ(0)!important;-webkit-transform:translateZ(0)!important;will-change:transform!important;}
+  .tour-cta-link{min-height:var(--mobile-cta-height,72px)!important;box-sizing:border-box!important;}
+  .intro-video-media{display:none!important;}
+  .intro-mobile-gif{display:block!important;width:100%!important;height:100%!important;object-fit:cover!important;border-radius:24px!important;background:#111!important;}
+}
 </style>
 </head>
 <body>
@@ -795,9 +812,10 @@
 <a class="wa-float" href="https://wa.me/5215534593346?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20SEGLE%20NAD%2B%20Tour%20M%C3%A9xico%202026" rel="noopener" target="_blank"><svg fill="currentColor" viewbox="0 0 32 32"><path d="M16.04 3C9.36 3 3.92 8.34 3.92 14.9c0 2.1.57 4.14 1.65 5.93L4 29l8.38-1.52a12.38 12.38 0 0 0 3.66.55c6.69 0 12.13-5.34 12.13-11.9C28.17 8.34 22.73 3 16.04 3Zm0 22.95c-1.2 0-2.37-.19-3.48-.58l-.5-.18-4.97.9.93-4.82-.26-.42a9.66 9.66 0 0 1-1.5-5.16c0-5.4 4.39-9.8 9.78-9.8 5.4 0 9.78 4.4 9.78 9.8 0 5.4-4.39 9.8-9.78 9.8Zm5.37-7.34c-.3-.15-1.74-.85-2.01-.95-.27-.1-.47-.15-.67.15-.2.3-.77.95-.95 1.14-.17.2-.35.22-.65.07-.3-.15-1.26-.45-2.4-1.44-.89-.77-1.49-1.73-1.66-2.03-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.58-.92-2.16-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.01-1.05 2.46s1.08 2.86 1.23 3.06c.15.2 2.12 3.18 5.13 4.46.72.31 1.28.5 1.71.64.72.22 1.38.19 1.9.12.58-.08 1.74-.7 1.99-1.38.25-.67.25-1.25.17-1.38-.07-.12-.27-.2-.57-.35Z"></path></svg><span>Más información</span></a>
 <div class="intro-overlay intro-v14-overlay" id="introOverlay">
 <div class="intro-video-card">
-<video autoplay="" class="intro-video-media" id="introVideo" muted="" defaultmuted="" playsinline="" webkit-playsinline="" preload="auto" poster="assets/nad-movement-poster.jpg">
+<video autoplay="" class="intro-video-media" id="introVideo" muted="" defaultmuted="" playsinline="" webkit-playsinline="" preload="auto" poster="assets/nad-movement-poster.jpg" disablepictureinpicture="">
 <source src="assets/nad-teaser.mp4" type="video/mp4"/>
 </video>
+<img class="intro-mobile-gif" src="assets/nad-teaser-mobile.gif" alt="Nueva línea NAD+ SEGLE" aria-hidden="true" loading="eager" decoding="async"/>
 <div class="intro-video-top intro-video-floating-top">
 <button class="intro-video-close intro-top-skip" id="introSkipTop" type="button">Saltar</button>
 </div>
@@ -1025,6 +1043,35 @@ function checkMandatory4313719000096522003(){
   document.addEventListener('visibilitychange', function(){ if(!document.hidden) forceIntroPlay(); });
   document.addEventListener('touchstart', forceIntroPlay, {once:true, passive:true});
   [60,180,420,900,1400].forEach(function(ms){setTimeout(forceIntroPlay, ms);});
+})();
+</script>
+
+<script>
+(function(){
+  function setMobileCtaHeight(){
+    var b=document.getElementById('tourCtaBanner');
+    if(!b) return;
+    document.documentElement.style.setProperty('--mobile-cta-height', Math.ceil(b.offsetHeight || 72) + 'px');
+  }
+  setMobileCtaHeight();
+  window.addEventListener('resize', setMobileCtaHeight);
+  window.addEventListener('orientationchange', function(){setTimeout(setMobileCtaHeight,250);});
+})();
+(function(){
+  var video=document.getElementById('introVideo');
+  if(!video) return;
+  function hardPlay(){
+    try{
+      video.muted=true; video.defaultMuted=true; video.playsInline=true;
+      video.setAttribute('muted',''); video.setAttribute('playsinline',''); video.setAttribute('webkit-playsinline',''); video.setAttribute('autoplay','');
+      if(video.readyState < 2){ try{video.load();}catch(e){} }
+      var p=video.play();
+      if(p && p.catch){p.catch(function(){});}
+    }catch(e){}
+  }
+  if(document.readyState==='loading'){document.addEventListener('DOMContentLoaded', hardPlay, {once:true});}
+  requestAnimationFrame(hardPlay);
+  setTimeout(hardPlay,30); setTimeout(hardPlay,120); setTimeout(hardPlay,360);
 })();
 </script>
 </body></html>
