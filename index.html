@@ -17,15 +17,15 @@
 <meta content="SEGLE presenta en México su nueva línea NAD+ Booster Complex durante el Tour México 2026. Aparta tu lugar." name="description"/>
 <meta content="Tour México 2026 + Lanzamiento Línea NAD+" property="og:title"/>
 <meta content="Aparta tu lugar para CDMX, Monterrey o Guadalajara." property="og:description"/>
-<meta content="https://tourmexico.segleclinical.com.mx/assets/segle-nad-og-v34.jpg" property="og:image"/>
-<meta content="https://tourmexico.segleclinical.com.mx/assets/segle-nad-og-v34.jpg" property="og:image:secure_url"/>
+<meta content="https://tourmexico.segleclinical.com.mx/assets/segle-nad-og-v35.jpg" property="og:image"/>
+<meta content="https://tourmexico.segleclinical.com.mx/assets/segle-nad-og-v35.jpg" property="og:image:secure_url"/>
 <meta content="image/jpeg" property="og:image:type"/>
 <meta content="1200" property="og:image:width"/>
 <meta content="1200" property="og:image:height"/>
 <meta content="https://tourmexico.segleclinical.com.mx/" property="og:url"/>
 <meta content="website" property="og:type"/>
 <meta content="summary_large_image" name="twitter:card"/>
-<meta content="https://tourmexico.segleclinical.com.mx/assets/segle-nad-og-v34.jpg" name="twitter:image"/>
+<meta content="https://tourmexico.segleclinical.com.mx/assets/segle-nad-og-v35.jpg" name="twitter:image"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;1,400&amp;family=Montserrat:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
@@ -695,6 +695,8 @@
   .intro-video-copy h3{font-size:2rem!important;}
   .intro-video-copy p{font-size:.88rem!important;margin-bottom:.72rem!important;}
 }
+
+.intro-video-copy .intro-banner-cta{position:relative!important;left:auto!important;right:auto!important;bottom:auto!important;width:100%!important;max-width:360px!important;margin:0 0 .92rem!important;display:flex!important;align-items:center!important;justify-content:space-between!important;gap:.7rem!important;border-radius:18px!important;padding:.62rem .72rem!important;box-shadow:0 10px 26px rgba(0,0,0,.24)!important}.intro-video-copy .intro-banner-cta span{font-size:.44rem!important;letter-spacing:.1em!important}.intro-video-copy .intro-banner-cta strong{font-size:.48rem!important}@media(min-width:761px){.intro-video-copy .intro-banner-cta{max-width:420px!important;padding:.7rem .82rem!important}.intro-video-copy .intro-banner-cta span{font-size:.52rem!important}.intro-video-copy .intro-banner-cta strong{font-size:.56rem!important}}
 </style>
 </head>
 <body>
@@ -763,11 +765,12 @@
 </video>
 <div class="intro-video-top intro-video-floating-top">
 <button class="intro-video-close intro-top-skip" id="introSkipTop" type="button">Saltar</button>
-</div><a aria-label="Aparta tu lugar para Tour México 2026 y Lanzamiento Línea NAD+" class="intro-banner-cta" href="#registro" id="introBannerCta"><span>Tour México 2026 + Lanzamiento Línea NAD+</span><strong>Aparta tu lugar ya</strong></a>
+</div>
 <div class="intro-video-copy">
 <span>Nueva línea NAD+</span>
 <h3>Energía y longevidad<br/>celular.</h3>
 <p>Descubre los productos SEGLE con NAD+.</p>
+<a aria-label="Aparta tu lugar para Tour México 2026 y Lanzamiento Línea NAD+" class="intro-banner-cta" href="#registro" id="introBannerCta"><span>Tour México 2026 + Lanzamiento Línea NAD+</span><strong>Aparta tu lugar ya</strong></a>
 <button class="intro-enter-btn intro-copy-enter" id="introEnter" type="button">Entrar al sitio</button>
 </div>
 </div>
@@ -778,6 +781,7 @@
   var video=document.getElementById('introVideo');
   var skip=document.getElementById('introSkipTop');
   var enter=document.getElementById('introEnter');
+  var introBanner=document.getElementById('introBannerCta');
   var sound=document.getElementById('introSound');
   function closeIntro(){
     if(!overlay) return;
@@ -788,6 +792,7 @@
   window.closeIntroOverlay=closeIntro;
   if(skip) skip.addEventListener('click', closeIntro);
   if(enter) enter.addEventListener('click', closeIntro);
+  if(introBanner) introBanner.addEventListener('click', closeIntro);
   if(sound){
     sound.addEventListener('click', function(){
       if(!video) return;
@@ -890,6 +895,7 @@ function checkMandatory4313719000096522003(){
   var video=document.getElementById('introVideo');
   var skipTop=document.getElementById('introSkipTop');
   var enter=document.getElementById('introEnter');
+  var introBanner=document.getElementById('introBannerCta');
   var sound=document.getElementById('introSound');
   if(!overlay) return;
   function closeIntro(){
@@ -900,6 +906,7 @@ function checkMandatory4313719000096522003(){
   window.closeIntroOverlay=closeIntro;
   if(skipTop) skipTop.addEventListener('click', closeIntro);
   if(enter) enter.addEventListener('click', closeIntro);
+  if(introBanner) introBanner.addEventListener('click', closeIntro);
   if(sound){
     sound.addEventListener('click', function(){
       if(!video) return;
