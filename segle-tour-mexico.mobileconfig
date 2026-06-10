@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+ "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.webClip.managed</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>mx.com.segleclinical.tourmexico.webclip</string>
+      <key>PayloadUUID</key>
+      <string>8858F24F-25A9-4F5E-8E4E-086C2BBFC79B</string>
+      <key>PayloadDisplayName</key>
+      <string>SEGLE Tour México</string>
+      <key>Label</key>
+      <string>SEGLE Tour</string>
+      <key>URL</key>
+      <string>https://tourmexico.segleclinical.com.mx/</string>
+      <key>IsRemovable</key>
+      <true/>
+      <key>FullScreen</key>
+      <false/>
+      <key>Precomposed</key>
+      <false/>
+    </dict>
+  </array>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+  <key>PayloadIdentifier</key>
+  <string>mx.com.segleclinical.tourmexico.profile</string>
+  <key>PayloadUUID</key>
+  <string>2A20B21C-5BBE-4C4B-A9EB-67B8233C8D2A</string>
+  <key>PayloadDisplayName</key>
+  <string>Instalar acceso SEGLE Tour México</string>
+  <key>PayloadDescription</key>
+  <string>Agrega un acceso directo a SEGLE Tour México en la pantalla de inicio.</string>
+  <key>PayloadOrganization</key>
+  <string>SEGLE México</string>
+</dict>
+</plist>
