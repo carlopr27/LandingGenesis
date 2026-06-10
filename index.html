@@ -72,8 +72,7 @@ html{scroll-padding-top:var(--scroll-offset,140px)}#home,#tour,#linea,#segle,#mo
 .intro-overlay.hide{opacity:0!important;visibility:hidden!important;pointer-events:none!important;display:none!important}
 .intro-video-card{position:relative;width:min(430px,92vw);height:min(82svh,720px);max-height:82svh;overflow:hidden;border-radius:28px;background:#111;box-shadow:0 34px 110px rgba(0,0,0,.46)}
 .intro-video-card:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.10) 36%,rgba(0,0,0,.74) 100%)}
-.intro-video-media,.intro-mobile-gif{width:100%;height:100%;object-fit:cover;background:#111;display:block}
-.intro-mobile-gif{display:none}
+.intro-video-media{width:100%;height:100%;object-fit:cover;background:#111;display:block}
 .intro-skip{position:absolute;top:1rem;right:1rem;z-index:4;appearance:none;border:1px solid rgba(255,255,255,.36);background:rgba(0,0,0,.42);color:#fff;border-radius:999px;padding:.68rem .95rem;font-family:var(--sans);font-size:.62rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(10px)}
 .intro-video-copy{position:absolute;left:clamp(1.25rem,4vw,2rem);right:clamp(1.25rem,4vw,2rem);bottom:clamp(1.15rem,4vw,1.75rem);z-index:3;color:#fff}
 .intro-video-copy span{display:block;color:var(--peach);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;font-weight:900;margin-bottom:.48rem}
@@ -82,7 +81,7 @@ html{scroll-padding-top:var(--scroll-offset,140px)}#home,#tour,#linea,#segle,#mo
 .intro-actions{display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}
 .intro-actions a,.intro-actions button{appearance:none;border:0;border-radius:999px;padding:.74rem .95rem;font-family:var(--sans);font-size:.58rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;cursor:pointer;white-space:nowrap}
 .intro-actions a{background:#fff;color:#111}.intro-actions button{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.32)}
-@media(max-width:620px){.intro-video-card{width:min(92vw,380px);height:min(78svh,640px);border-radius:24px}.intro-video-media{display:none}.intro-mobile-gif{display:block}.intro-skip{top:.82rem;right:.82rem;font-size:.55rem;padding:.56rem .72rem}.intro-video-copy{left:1.12rem;right:1.12rem;bottom:1.12rem}.intro-video-copy span{font-size:.54rem;margin-bottom:.42rem}.intro-video-copy h3{font-size:2.18rem}.intro-video-copy p{font-size:.9rem}.intro-actions a,.intro-actions button{font-size:.52rem;padding:.62rem .72rem}}
+@media(max-width:620px){.intro-video-card{width:min(92vw,380px);height:min(78svh,640px);border-radius:24px}.intro-video-media{display:block}.intro-skip{top:.82rem;right:.82rem;font-size:.55rem;padding:.56rem .72rem}.intro-video-copy{left:1.12rem;right:1.12rem;bottom:1.12rem}.intro-video-copy span{font-size:.54rem;margin-bottom:.42rem}.intro-video-copy h3{font-size:2.18rem}.intro-video-copy p{font-size:.9rem}.intro-actions a,.intro-actions button{font-size:.52rem;padding:.62rem .72rem}}
 
 </style>
 </head>
@@ -109,7 +108,7 @@ html{scroll-padding-top:var(--scroll-offset,140px)}#home,#tour,#linea,#segle,#mo
     <div>
       <div class="hero-kicker"><span class="tag">CDMX · MTY · GDL</span><span class="tag">Julio 2026</span><span class="tag">Cupo limitado</span></div>
       <h1 class="hero-title">Tour México 2026 +<br/><span class="serif">Lanzamiento Línea NAD+</span></h1>
-      <p class="hero-copy"><b>Una invitación para conocer la nueva línea NAD+ de SEGLE.</b> Presentaremos la ciencia detrás de NAD+ Booster Complex, el rol de cada producto y su integración en protocolos profesionales de cuidado de la piel; diseñada para activar el núcleo de la longevidad celular, apoyar la reparación del ADN y acompañar una piel que se ve y se siente más firme, luminosa y joven.</p>
+      <p class="hero-copy"><b>Una invitación para conocer la nueva línea NAD+ de SEGLE.</b> Presentaremos la ciencia detrás de NAD+ Booster Complex, el rol de cada producto y su integración en protocolos profesionales de cuidado de la piel.</p>
       <div class="hero-actions"><a class="btn btn-primary" href="#registro">Solicitar invitación</a><a class="btn btn-outline" href="#tour">Ver fechas y sesiones</a></div>
     </div>
     <aside class="hero-visual" aria-label="Línea NAD+ presentada por Mónica Lizondo">
@@ -181,10 +180,9 @@ html{scroll-padding-top:var(--scroll-offset,140px)}#home,#tour,#linea,#segle,#mo
 
 <div class="intro-overlay" id="introOverlay" aria-label="Introducción Línea NAD+ SEGLE">
   <div class="intro-video-card">
-    <video autoplay class="intro-video-media" id="introVideo" muted defaultmuted playsinline webkit-playsinline preload="auto" poster="assets/nad-movement-poster.jpg" disablepictureinpicture>
+    <video autoplay class="intro-video-media" id="introVideo" muted defaultmuted playsinline webkit-playsinline preload="auto" disablepictureinpicture>
       <source src="assets/nad-teaser.mp4" type="video/mp4"/>
     </video>
-    <img class="intro-mobile-gif" src="assets/nad-teaser-mobile.gif" alt="Nueva línea NAD+ SEGLE" aria-hidden="true" loading="eager" decoding="async"/>
     <button class="intro-skip" id="introSkipTop" type="button">Saltar</button>
     <div class="intro-video-copy">
       <span>Nueva línea NAD+</span>
