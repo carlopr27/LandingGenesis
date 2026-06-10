@@ -48,6 +48,42 @@ html{scroll-padding-top:var(--scroll-offset,140px)}#home,#tour,#linea,#segle,#mo
 @media(max-width:980px){.energy-head,.linea-intro,.monica-grid{grid-template-columns:1fr}.energy-image{max-width:100%}.product-grid{grid-template-columns:1fr}.product-card{grid-template-columns:1fr;min-height:0}.product-info{min-height:0;padding:1rem}.product-img{height:300px}.pillar-cards{grid-template-columns:1fr}.pillar img{height:210px}.portrait-wrap{max-width:300px;justify-self:start}.marquee-inner{justify-content:flex-start;overflow-x:auto;gap:1.1rem;font-size:.56rem;padding:.72rem 1.2rem}.collagen .product-img.collagen-gallery{height:225px;min-height:225px}}
 @media(max-width:620px){.energy-body{padding-top:1.8rem}.products-body{padding-top:.8rem}.product-img{height:280px}.portrait-wrap{max-width:240px}.monica-grid{gap:1.2rem}.quote{font-size:1.08rem}.brand-statement{padding:1.05rem}.city-card ul{font-size:.82rem}}
 
+
+/* ===== V44 hero product carousel ===== */
+.hero-carousel{isolation:isolate;}
+.hero-carousel-track{position:relative;z-index:1;display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;width:100%;height:430px;scrollbar-width:none;-webkit-overflow-scrolling:touch;}
+.hero-carousel-track::-webkit-scrollbar{display:none;}
+.hero-product-slide{flex:0 0 100%;scroll-snap-align:center;margin:0;display:flex;align-items:center;justify-content:center;position:relative;padding:.7rem 2.1rem 1.5rem;}
+.hero-product-slide img{width:100%;height:100%;object-fit:contain;background:#fff;padding:.7rem;box-shadow:0 0 0 1px rgba(234,217,207,.84);}
+.hero-product-slide figcaption{position:absolute;left:50%;bottom:.25rem;transform:translateX(-50%);background:rgba(255,255,255,.88);border:1px solid rgba(234,217,207,.92);padding:.34rem .62rem;border-radius:999px;font-size:.56rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;color:#3d3631;white-space:nowrap;box-shadow:0 8px 22px rgba(35,31,32,.08);}
+.hero-car-btn{position:absolute;top:50%;z-index:4;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:1px solid rgba(35,31,32,.12);background:rgba(255,255,255,.9);color:#111;font-size:1.5rem;line-height:1;display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 26px rgba(35,31,32,.12);}
+.hero-car-prev{left:18px}.hero-car-next{right:18px}.hero-car-btn:hover{border-color:var(--rose);color:var(--rose)}
+.hero-car-dots{position:absolute;left:0;right:0;bottom:14px;z-index:4;display:flex;justify-content:center;gap:.45rem;}
+.hero-car-dots button{width:8px;height:8px;border-radius:50%;border:0;background:#d8c8bf;padding:0;cursor:pointer;}
+.hero-car-dots button.active{background:var(--rose);transform:scale(1.25);}
+.hero-swipe-hint{position:absolute;z-index:4;right:18px;top:18px;background:rgba(17,17,17,.78);color:#fff;border-radius:999px;padding:.42rem .62rem;font-size:.52rem;font-weight:900;letter-spacing:.11em;text-transform:uppercase;box-shadow:0 10px 24px rgba(35,31,32,.14);}
+@media(max-width:980px){.hero-carousel-track{height:330px}.hero-product-slide{padding:.55rem 1.65rem 1.35rem}.hero-car-btn{width:34px;height:34px;font-size:1.35rem}.hero-car-prev{left:12px}.hero-car-next{right:12px}.hero-swipe-hint{right:12px;top:12px;font-size:.46rem;padding:.34rem .5rem}}
+@media(max-width:620px){.hero-carousel-track{height:276px}.hero-product-slide{padding:.4rem 1.3rem 1.22rem}.hero-product-slide img{padding:.42rem}.hero-product-slide figcaption{font-size:.47rem;padding:.27rem .48rem}.hero-car-btn{width:30px;height:30px;font-size:1.15rem}.hero-car-prev{left:8px}.hero-car-next{right:8px}.hero-swipe-hint{font-size:.4rem;right:8px;top:8px;letter-spacing:.08em}.hero-car-dots{bottom:10px}}
+
+
+
+/* ===== V45 intro overlay restored: 3s controlled impact only ===== */
+.intro-overlay{position:fixed;inset:0;z-index:320;display:flex;align-items:center;justify-content:center;padding:clamp(.9rem,3vw,2rem);background:rgba(18,16,15,.80);backdrop-filter:blur(18px);opacity:1;visibility:visible;transition:opacity .28s ease,visibility .28s ease}
+.intro-overlay.hide{opacity:0!important;visibility:hidden!important;pointer-events:none!important;display:none!important}
+.intro-video-card{position:relative;width:min(430px,92vw);height:min(82svh,720px);max-height:82svh;overflow:hidden;border-radius:28px;background:#111;box-shadow:0 34px 110px rgba(0,0,0,.46)}
+.intro-video-card:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,rgba(0,0,0,.05) 0%,rgba(0,0,0,.10) 36%,rgba(0,0,0,.74) 100%)}
+.intro-video-media,.intro-mobile-gif{width:100%;height:100%;object-fit:cover;background:#111;display:block}
+.intro-mobile-gif{display:none}
+.intro-skip{position:absolute;top:1rem;right:1rem;z-index:4;appearance:none;border:1px solid rgba(255,255,255,.36);background:rgba(0,0,0,.42);color:#fff;border-radius:999px;padding:.68rem .95rem;font-family:var(--sans);font-size:.62rem;font-weight:900;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;backdrop-filter:blur(10px)}
+.intro-video-copy{position:absolute;left:clamp(1.25rem,4vw,2rem);right:clamp(1.25rem,4vw,2rem);bottom:clamp(1.15rem,4vw,1.75rem);z-index:3;color:#fff}
+.intro-video-copy span{display:block;color:var(--peach);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;font-weight:900;margin-bottom:.48rem}
+.intro-video-copy h3{font-family:var(--serif);font-size:clamp(2rem,5vw,2.8rem);line-height:1.03;font-weight:400;letter-spacing:-.035em;margin:0 0 .55rem;color:#fff}
+.intro-video-copy p{font-size:.98rem;line-height:1.42;margin:0 0 .9rem;color:rgba(255,255,255,.9)}
+.intro-actions{display:flex;gap:.55rem;align-items:center;flex-wrap:wrap}
+.intro-actions a,.intro-actions button{appearance:none;border:0;border-radius:999px;padding:.74rem .95rem;font-family:var(--sans);font-size:.58rem;letter-spacing:.11em;text-transform:uppercase;font-weight:900;cursor:pointer;white-space:nowrap}
+.intro-actions a{background:#fff;color:#111}.intro-actions button{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.32)}
+@media(max-width:620px){.intro-video-card{width:min(92vw,380px);height:min(78svh,640px);border-radius:24px}.intro-video-media{display:none}.intro-mobile-gif{display:block}.intro-skip{top:.82rem;right:.82rem;font-size:.55rem;padding:.56rem .72rem}.intro-video-copy{left:1.12rem;right:1.12rem;bottom:1.12rem}.intro-video-copy span{font-size:.54rem;margin-bottom:.42rem}.intro-video-copy h3{font-size:2.18rem}.intro-video-copy p{font-size:.9rem}.intro-actions a,.intro-actions button{font-size:.52rem;padding:.62rem .72rem}}
+
 </style>
 </head>
 <body>
@@ -73,11 +109,21 @@ html{scroll-padding-top:var(--scroll-offset,140px)}#home,#tour,#linea,#segle,#mo
     <div>
       <div class="hero-kicker"><span class="tag">CDMX · MTY · GDL</span><span class="tag">Julio 2026</span><span class="tag">Cupo limitado</span></div>
       <h1 class="hero-title">Tour México 2026 +<br/><span class="serif">Lanzamiento Línea NAD+</span></h1>
-      <p class="hero-copy"><b>Una invitación para conocer la nueva línea NAD+ de SEGLE.</b> Presentaremos la ciencia detrás de NAD+ Booster Complex, el rol de cada producto y su integración en protocolos profesionales de cuidado de la piel.</p>
+      <p class="hero-copy"><b>Una invitación para conocer la nueva línea NAD+ de SEGLE.</b> Presentaremos la ciencia detrás de NAD+ Booster Complex, el rol de cada producto y su integración en protocolos profesionales de cuidado de la piel; diseñada para activar el núcleo de la longevidad celular, apoyar la reparación del ADN y acompañar una piel que se ve y se siente más firme, luminosa y joven.</p>
       <div class="hero-actions"><a class="btn btn-primary" href="#registro">Solicitar invitación</a><a class="btn btn-outline" href="#tour">Ver fechas y sesiones</a></div>
     </div>
     <aside class="hero-visual" aria-label="Línea NAD+ presentada por Mónica Lizondo">
-      <div class="hero-product-frame"><div class="hero-product-combo"><img src="assets/antiox-white.jpg" alt="Antiox NAD+"/><img src="assets/collagen-serum-white.jpg" alt="Collagen NAD+ Serum"/><img src="assets/collagen-cream-white.jpg" alt="Collagen NAD+ Crema"/></div></div>
+      <div class="hero-product-frame hero-carousel" aria-label="Carrusel de productos Línea NAD+">
+          <div class="hero-carousel-track" id="heroProductTrack">
+            <figure class="hero-product-slide"><img src="assets/antiox-white.jpg" alt="Antiox NAD+ Serum"/><figcaption>Antiox NAD+</figcaption></figure>
+            <figure class="hero-product-slide"><img src="assets/collagen-serum-white.jpg" alt="Collagen NAD+ Serum"/><figcaption>Collagen NAD+ Serum</figcaption></figure>
+            <figure class="hero-product-slide"><img src="assets/collagen-cream-white.jpg" alt="Collagen NAD+ Crema"/><figcaption>Collagen NAD+ Crema</figcaption></figure>
+          </div>
+          <button class="hero-car-btn hero-car-prev" type="button" aria-label="Producto anterior">‹</button>
+          <button class="hero-car-btn hero-car-next" type="button" aria-label="Producto siguiente">›</button>
+          <div class="hero-swipe-hint">Desliza para ver la línea NAD+</div>
+          <div class="hero-car-dots" aria-label="Indicadores del carrusel"><button class="active" type="button" aria-label="Ver Antiox NAD+"></button><button type="button" aria-label="Ver Collagen NAD+ Serum"></button><button type="button" aria-label="Ver Collagen NAD+ Crema"></button></div>
+        </div>
       <div class="monica-chip"><img src="assets/monica.jpg" alt="Mónica Lizondo"/><b>Presentado por Mónica Lizondo</b><span>Cofundadora de SEGLE</span></div>
     </aside>
   </div>
@@ -132,6 +178,61 @@ html{scroll-padding-top:var(--scroll-offset,140px)}#home,#tour,#linea,#segle,#mo
 <section class="bio-footer-strip"><div class="container bio-icons-row"><div class="bio-icon-cell"><img alt="Biotecnología azul" src="assets/icon-azul.png"/></div><div class="bio-icon-cell"><img alt="Biotecnología blanca" src="assets/icon-blanca.png"/></div><div class="bio-icon-cell"><img alt="Biotecnología verde" src="assets/icon-verde.png"/></div></div></section>
 <footer><div class="container footer-inner"><div class="footer-logo"><img alt="SEGLE Biotech Skincare" src="assets/segle-logo.png"/></div><div class="footer-copy">SEGLE Biotech Skincare · Línea NAD+ · Tour México 2026<br/>CDMX · Monterrey · Guadalajara</div><div class="footer-socials" aria-label="Redes sociales SEGLE México"><a href="https://www.instagram.com/segle_mexico/" target="_blank" rel="noopener" aria-label="Instagram SEGLE México"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.8 2h8.4A5.8 5.8 0 0 1 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8A5.8 5.8 0 0 1 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2Zm0 2A3.8 3.8 0 0 0 4 7.8v8.4A3.8 3.8 0 0 0 7.8 20h8.4a3.8 3.8 0 0 0 3.8-3.8V7.8A3.8 3.8 0 0 0 16.2 4H7.8Zm4.2 3.2A4.8 4.8 0 1 1 7.2 12 4.8 4.8 0 0 1 12 7.2Zm0 2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2Zm5.05-2.4a1.15 1.15 0 1 1-1.15 1.15 1.15 1.15 0 0 1 1.15-1.15Z"/></svg><span>@segle_mexico</span></a><a href="https://www.linkedin.com/company/segle-mexico/" target="_blank" rel="noopener" aria-label="LinkedIn SEGLE México"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.98 3.5A2.5 2.5 0 1 1 2.5 6a2.49 2.49 0 0 1 2.48-2.5ZM3 9h4v12H3V9Zm6.2 0h3.83v1.64h.05A4.2 4.2 0 0 1 16.86 8.6c4.04 0 4.79 2.66 4.79 6.12V21h-4v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94V21h-4V9Z"/></svg><span>SEGLE México</span></a></div></div></footer>
 <a class="wa-float" href="https://wa.me/5215534593346?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20SEGLE%20NAD%2B%20Tour%20M%C3%A9xico%202026" rel="noopener" target="_blank"><svg fill="currentColor" viewBox="0 0 32 32"><path d="M16.04 3C9.36 3 3.92 8.34 3.92 14.9c0 2.1.57 4.14 1.65 5.93L4 29l8.38-1.52a12.38 12.38 0 0 0 3.66.55c6.69 0 12.13-5.34 12.13-11.9C28.17 8.34 22.73 3 16.04 3Zm0 22.95c-1.2 0-2.37-.19-3.48-.58l-.5-.18-4.97.9.93-4.82-.26-.42a9.66 9.66 0 0 1-1.5-5.16c0-5.4 4.39-9.8 9.78-9.8 5.4 0 9.78 4.4 9.78 9.8 0 5.4-4.39 9.8-9.78 9.8Zm5.37-7.34c-.3-.15-1.74-.85-2.01-.95-.27-.1-.47-.15-.67.15-.2.3-.77.95-.95 1.14-.17.2-.35.22-.65.07-.3-.15-1.26-.45-2.4-1.44-.89-.77-1.49-1.73-1.66-2.03-.17-.3-.02-.46.13-.6.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.58-.92-2.16-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.05 1.01-1.05 2.46s1.08 2.86 1.23 3.06c.15.2 2.12 3.18 5.13 4.46.72.31 1.28.5 1.71.64.72.22 1.38.19 1.9.12.58-.08 1.74-.7 1.99-1.38.25-.67.25-1.25.17-1.38-.07-.12-.27-.2-.57-.35Z"/></svg><span>Más información</span></a>
+
+<div class="intro-overlay" id="introOverlay" aria-label="Introducción Línea NAD+ SEGLE">
+  <div class="intro-video-card">
+    <video autoplay class="intro-video-media" id="introVideo" muted defaultmuted playsinline webkit-playsinline preload="auto" poster="assets/nad-movement-poster.jpg" disablepictureinpicture>
+      <source src="assets/nad-teaser.mp4" type="video/mp4"/>
+    </video>
+    <img class="intro-mobile-gif" src="assets/nad-teaser-mobile.gif" alt="Nueva línea NAD+ SEGLE" aria-hidden="true" loading="eager" decoding="async"/>
+    <button class="intro-skip" id="introSkipTop" type="button">Saltar</button>
+    <div class="intro-video-copy">
+      <span>Nueva línea NAD+</span>
+      <h3>Energía y longevidad<br/>celular.</h3>
+      <p>Tour México 2026 + Lanzamiento Línea NAD+.</p>
+      <div class="intro-actions">
+        <a href="#registro" id="introBannerCta">Solicitar invitación</a>
+        <button id="introEnter" type="button">Entrar al sitio</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay=document.getElementById('introOverlay');
+  var video=document.getElementById('introVideo');
+  var skip=document.getElementById('introSkipTop');
+  var enter=document.getElementById('introEnter');
+  var cta=document.getElementById('introBannerCta');
+  if(!overlay) return;
+  function closeIntro(){
+    overlay.classList.add('hide');
+    overlay.style.display='none';
+    if(video){try{video.pause();}catch(e){}}
+  }
+  window.closeIntroOverlay=closeIntro;
+  if(skip) skip.addEventListener('click', closeIntro);
+  if(enter) enter.addEventListener('click', closeIntro);
+  if(cta) cta.addEventListener('click', function(){ setTimeout(closeIntro, 10); });
+  function forcePlay(){
+    if(!video) return;
+    try{
+      video.muted=true; video.defaultMuted=true; video.playsInline=true;
+      video.setAttribute('muted',''); video.setAttribute('autoplay',''); video.setAttribute('playsinline',''); video.setAttribute('webkit-playsinline','');
+      var p=video.play();
+      if(p && p.catch) p.catch(function(){});
+    }catch(e){}
+  }
+  if(video){
+    video.addEventListener('ended', closeIntro);
+    ['loadedmetadata','canplay','canplaythrough'].forEach(function(evt){video.addEventListener(evt, forcePlay, {once:false});});
+  }
+  forcePlay();
+  [60,180,420,900].forEach(function(ms){setTimeout(forcePlay,ms);});
+  setTimeout(closeIntro,3000);
+})();
+</script>
 <script>
 function validateEmail4313719000096522003(){
   var form=document.forms['WebToLeads4313719000096522003']; if(!form) return false;
@@ -231,5 +332,56 @@ function checkMandatory4313719000096522003(){
 })();
 </script>
 
+
+<script>
+(function(){
+  var frame=document.querySelector('.hero-carousel');
+  var track=document.getElementById('heroProductTrack');
+  if(!frame || !track) return;
+  var slides=[].slice.call(track.querySelectorAll('.hero-product-slide'));
+  var dots=[].slice.call(frame.querySelectorAll('.hero-car-dots button'));
+  var prev=frame.querySelector('.hero-car-prev');
+  var next=frame.querySelector('.hero-car-next');
+  var current=0;
+  var timer=null;
+  function go(index){
+    if(!slides.length) return;
+    current=(index+slides.length)%slides.length;
+    var left=slides[current].offsetLeft;
+    track.scrollTo({left:left,behavior:'smooth'});
+    updateDots();
+  }
+  function updateDots(){
+    dots.forEach(function(dot,i){dot.classList.toggle('active',i===current);});
+  }
+  function inferIndex(){
+    var center=track.scrollLeft + track.clientWidth/2;
+    var best=0, bestDist=Infinity;
+    slides.forEach(function(slide,i){
+      var c=slide.offsetLeft + slide.clientWidth/2;
+      var d=Math.abs(center-c);
+      if(d<bestDist){bestDist=d;best=i;}
+    });
+    current=best;
+    updateDots();
+  }
+  function start(){
+    stop();
+    timer=setInterval(function(){go(current+1);},3000);
+  }
+  function stop(){if(timer){clearInterval(timer);timer=null;}}
+  if(prev) prev.addEventListener('click',function(){go(current-1);start();});
+  if(next) next.addEventListener('click',function(){go(current+1);start();});
+  dots.forEach(function(dot,i){dot.addEventListener('click',function(){go(i);start();});});
+  var scrollTimer;
+  track.addEventListener('scroll',function(){clearTimeout(scrollTimer);scrollTimer=setTimeout(function(){inferIndex();start();},120);},{passive:true});
+  frame.addEventListener('mouseenter',stop);
+  frame.addEventListener('mouseleave',start);
+  frame.addEventListener('touchstart',stop,{passive:true});
+  frame.addEventListener('touchend',start,{passive:true});
+  updateDots();
+  start();
+})();
+</script>
 </body>
 </html>
